@@ -4069,12 +4069,11 @@
             document.getElementById('current-loc').innerText = cityData[state.idx].name;
             updateStatusPanel();
             
-            // Update gambar di tengah board sesuai wilayah yang sedang diinjak
+            // Keep the central board image fixed; region preview images are handled separately.
             const centerImageEl = document.querySelector('.center-image');
             const centerTitleEl = document.querySelector('.center-title');
-            if (centerImageEl) {
-                const newImage = cityData[state.idx].image || DEFAULT_PREVIEW_IMAGE;
-                centerImageEl.src = newImage;
+            if (centerImageEl && !centerImageEl.dataset.defaultSrc) {
+                centerImageEl.dataset.defaultSrc = centerImageEl.getAttribute('src') || '';
             }
             // center title text intentionally left blank to hide region name
             

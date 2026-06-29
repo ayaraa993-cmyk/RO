@@ -4074,12 +4074,7 @@
             const centerTitleEl = document.querySelector('.center-title');
             if (centerImageEl) {
                 const newImage = cityData[state.idx].image || DEFAULT_PREVIEW_IMAGE;
-                centerImageEl.style.opacity = '0.5';
-                centerImageEl.style.transition = 'all 0.4s ease';
-                setTimeout(() => {
-                    centerImageEl.src = newImage;
-                    centerImageEl.style.opacity = '1';
-                }, 200);
+                centerImageEl.src = newImage;
             }
             // center title text intentionally left blank to hide region name
             
